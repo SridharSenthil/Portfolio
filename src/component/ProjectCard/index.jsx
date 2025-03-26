@@ -3,7 +3,7 @@ import UpRight from '../../assets/up-right.svg';
 
 const ProjectCard = ({ image, mainHeader, description, year, month, Link }) => {
     return (
-        <div className='flex w-full h-auto gap-[48px] items-center justify-between'>
+        <div className='flex flex-col lg:flex-row w-full h-auto gap-[48px] items-center justify-between'>
 
             <div className='w-full max-w-[500px] h-[500px] bg-[#0a0a0a] flex items-center justify-center border border-[#c7c7c7] rounded-[10px]'>
                 <div className='w-full max-w-[486px] h-full max-h-[347px] flex items-center justify-center'>
@@ -13,8 +13,8 @@ const ProjectCard = ({ image, mainHeader, description, year, month, Link }) => {
 
             <div className='w-full h-auto flex flex-col gap-[48px]'>
                 <div className='flex flex-col gap-[16px]'>
-                    <span className='text-card-title text-[#ffffff]'>{mainHeader}</span>
-                    <span className='text-normal-text text-primeText'>{description}</span>
+                    <span className='text-sm-card font-bold lg:font-[400] lg:text-card-title text-[#ffffff]'>{mainHeader}</span>
+                    <span className='text-sm-normal lg:text-normal-text text-justify text-primeText'>{description}</span>
                 </div>
 
                 <div className='flex flex-col gap-[16px]'>

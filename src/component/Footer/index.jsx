@@ -36,10 +36,10 @@ const Footer = () => {
 
     return (
         <>
-        <div className='w-full h-auto px-[85px] py-[30px] flex justify-between mb-[40px]'>
+        <div className='w-full h-auto px-[15px] lg:px-[85px] py-[30px] flex flex-col lg:flex-row gap-[25px] justify-between mb-[40px]'>
 
             <div className='w-auto h-auto flex flex-col gap-[20px]'>
-                <span className='text-main-title text-[#ffffff]'>LET'S CONNECT</span>
+                <span className='lg:text-main-title text-sm-main font-bold lg:font-[400] text-primeText font-bebas leading-[100%] tracking-tighter'>LET'S CONNECT</span>
                 <div className='flex flex-col gap-[8px]'>
                     <span className='text-primeText'>say hello at <a href='mailto:sridharsenthil97@gmail.com' className='underline decoration-primary'>sridharsenthil97@gmail.com</a></span>
                     <span className='text-primeText'>For more info, here's my <a href='/SRIDHAR SENTHILNATHAN.pdf' download="SRIDHAR SENTHILNATHAN.pdf" className='underline decoration-primary' >resume</a></span>

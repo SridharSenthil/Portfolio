@@ -8,10 +8,14 @@ export default {
     extend: {
       fontSize: {
         'hero' : '60px',
-        'main-title' : '56px',
+        'sm-hero' : '47px',
+        'main-title' : '45px',
+        'sm-main' : '30px',
+        'sm-card' : '20px',
         'card-title' : '32px',
         'link-text' : '16px',
         'normal-text' : '18px',
+        'sm-normal' : '16px'
       },
       fontFamily: {
         sans: [ 'Manrope', 'sans-serif'],
