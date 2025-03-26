@@ -1,38 +1,41 @@
 import React from 'react'
-import { FaLinkedin, FaGithub, FaInstagram } from 'react-icons/fa';
+import { FaLinkedin, FaGithub, FaInstagram, FaWhatsapp } from 'react-icons/fa';
 import SocialIcon from '../SocialIcon';
 import { Formik, Form, Field, ErrorMessage } from 'formik';
 import * as Yup from "yup";
 import emailjs from "@emailjs/browser";
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 const Footer = () => {
 
     const sendMail = ( values, {resetForm}) => {
         const serviceId = "service_sridharsenthil97";
         const templateId = "template_d93ksmb";
-        const publicKey = "-VmUOZWDtOUYSvkZe";
+        const publicKey = "pbdeD3ZSTsJKhQZi-";
 
         const templateParams = {
             name: values.name,
             email: values.email,
             subject: values.subject,
-            message: values.message,r
+            message: values.message,
         };
 
         emailjs.send(serviceId, templateId, templateParams, publicKey)
             .then((response) => {
                 console.log("Email sent successfully!", response);
-                alert("Message sent successfully!");
+                toast.success("Message send successfully!");
                 resetForm();
             })
             .catch((error) => {
                 console.error("Failed to send email:", error);
-                alert("Failed to send message. Try again later.");
+                toast.error("Error send message, Please try later!");
             });
     };
 
 
     return (
+        <>
         <div className='w-full h-auto px-[85px] py-[30px] flex justify-between mb-[40px]'>
 
             <div className='w-auto h-auto flex flex-col gap-[20px]'>
@@ -42,6 +45,11 @@ const Footer = () => {
                     <span className='text-primeText'>For more info, here's my <a href='/SRIDHAR SENTHILNATHAN.pdf' download="SRIDHAR SENTHILNATHAN.pdf" className='underline decoration-primary' >resume</a></span>
                 </div>
                 <div className='flex gap-[12px]'>
+                    <SocialIcon
+                        url="https://wa.me/919790314877"
+                        Icon={FaWhatsapp}
+                        color="#D3E97A"
+                    />
                     <SocialIcon
                         url="https://www.linkedin.com/in/sridhar-senthilnathan-ab87032a5"
                         Icon={FaLinkedin}
@@ -107,6 +115,8 @@ const Footer = () => {
                 </Formik>
             </div>
         </div>
+        <ToastContainer/>
+        </>
     )
 }
 
